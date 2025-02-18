@@ -1,11 +1,6 @@
 import fs from 'fs';
 import { createReport } from 'docx-templates';
-
-const data = {
-    nombre: "Juan Pérez",
-    fecha: new Date().toLocaleDateString(),
-    reporte: "Este es el informe del mes de febrero."
-};
+import { data } from './data/data.js';
 
 async function generarDocumento() {
     const template = fs.readFileSync("Document.docx", null);
@@ -15,8 +10,16 @@ async function generarDocumento() {
         cmdDelimiter: ['{{', '}}'],
     });
 
-    fs.writeFileSync("report.docx", buffer);
-    console.log("Documento generado exitosamente.");
+    // 📌 Timestamp
+    const outputFileName = `report_${new Date().toISOString().replace(/[-T:.Z]/g, "").slice(0, 14)}.docx`;
+    const outputPath = `reports/${outputFileName}`;
+
+    if (!fs.existsSync("reports")) {
+        fs.mkdirSync("reports");
+    }
+
+    fs.writeFileSync(outputPath, buffer);
+    console.log(`Documento generado exitosamente en: ${outputPath}`);
 }
 
 generarDocumento();
