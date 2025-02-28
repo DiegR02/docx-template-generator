@@ -3,7 +3,7 @@ import { createReport } from 'docx-templates';
 import data from "./data/data.json" assert { type: "json" };
 
 async function generarDocumento() {
-    const template = fs.readFileSync("Document.docx", null);
+    const template = fs.readFileSync("templates/template1.docx", null);
     const buffer = await createReport({
         template,
         data,
