@@ -7,14 +7,30 @@
         "bruto": "9.99"
     },
     "productos": [
-        {
-            "producto": "P1"
+        { "producto": "P1" },
+        { "producto": "P2" },
+        { "producto": "P3" }
+    ],
+    "envio": {
+        "internacional": {
+            "express": {
+                "rapido": "2 días",
+                "estandar": "6 días"
+            },
+            "normal": {
+                "rapido": "4 días",
+                "estandar": "8 días"
+            }
         },
-        {
-            "producto": "P2"
-        },
-        {
-            "producto": "P3"
+        "nacional": {
+            "hogar": {
+                "rapido": "1 día",
+                "estandar": "5 días"
+            },
+            "tienda": {
+                "rapido": "1 día",
+                "estandar": "5 días"
+            }
         }
-    ]
+    }
 }

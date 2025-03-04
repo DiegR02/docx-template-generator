@@ -1,6 +1,11 @@
 import fs from 'fs';
 import { createReport } from 'docx-templates';
 import data from "./data/data.json" assert { type: "json" };
+import { buscarTodasLasClaves } from './utils/helpers.js';
+
+const rapidos = buscarTodasLasClaves(data.envio, "rapido");
+
+data.rapidos = rapidos;
 
 async function generarDocumento() {
     const template = fs.readFileSync("templates/template1.docx", null);

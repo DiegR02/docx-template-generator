@@ -16,5 +16,27 @@ export const data = {
         {
             producto: "P3"
         }
-    ]
+    ],
+    envio: {
+        internacional: {
+            express: {
+                rapido: "2 días",
+                estandar: "6 días"
+            },
+            normal: {
+                rapido: "4 días",
+                estandar: "8 días"
+            }
+        },
+        nacional: {
+            hogar: {
+                rapido: "1 día",
+                estandar: "5 días"
+            },
+            tienda: {
+                rapido: "1 día",
+                estandar: "5 días"
+            }
+        }
+    }
 };
