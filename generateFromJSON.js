@@ -1,21 +1,38 @@
 import fs from 'fs';
 import { createReport } from 'docx-templates';
-import data from "./data/data.json" assert { type: "json" };
-import { buscarTodasLasClaves } from './utils/helpers.js';
+import path from 'path';
+//import data from "./data/data.json" with { type: "json" };
+import { searchKeys } from './utils/helpers.js';
 
-const rapidos = buscarTodasLasClaves(data.envio, "rapido");
+const dataDirectory = './data/';
 
+function getJSONFile(directory) {
+    const files = fs.readdirSync(directory).filter(file => file.endsWith('.json'));
+    return files.length > 0 ? files[0] : null;
+}
+
+const jsonFile = getJSONFile(dataDirectory);
+
+if (!jsonFile) {
+    console.error("JSON file not found.");
+    process.exit(1);
+}
+
+const jsonFilePath = path.join(dataDirectory, jsonFile);
+const rawData = fs.readFileSync(jsonFilePath, 'utf-8');
+
+const data = JSON.parse(rawData);
+const rapidos = searchKeys(data.envio, "rapido");
 data.rapidos = rapidos;
 
-async function generarDocumento() {
-    const template = fs.readFileSync("templates/template1.docx", null);
+async function generateDocument() {
+    const template = fs.readFileSync("templates/template.docx", null);
     const buffer = await createReport({
         template,
         data,
         cmdDelimiter: ['{{', '}}'],
     });
 
-    // 📌 Timestamp
     const outputFileName = `report-from-json_${new Date().toISOString().replace(/[-T:.Z]/g, "").slice(0, 14)}.docx`;
     const outputPath = `reports/${outputFileName}`;
 
@@ -24,7 +41,7 @@ async function generarDocumento() {
     }
 
     fs.writeFileSync(outputPath, buffer);
-    console.log(`Documento generado exitosamente en: ${outputPath}`);
+    console.log(`Document successfully generated at: ${outputPath}`);
 }
 
-generarDocumento();
+generateDocument();
