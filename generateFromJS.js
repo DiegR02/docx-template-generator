@@ -6,6 +6,15 @@ import { searchKeys } from './utils/helpers.js';
 const rapidos = searchKeys(data.envio, "rapido");
 data.rapidos = rapidos;
 
+/**
+ *
+ * Reads a DOCX template file, processes it using the provided data (js file), and saves the generated report
+ * in the "reports" directory with a timestamped filename.
+ *
+ * @async
+ * @function generateDocument
+ * @returns {Promise<void>} A promise that resolves when the document is successfully created.
+ */
 async function generateDocument() {
     const template = fs.readFileSync("templates/template.docx", null);
     const buffer = await createReport({

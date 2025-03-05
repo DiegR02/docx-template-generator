@@ -1,15 +1,9 @@
 import fs from 'fs';
-import { createReport } from 'docx-templates';
 import path from 'path';
-//import data from "./data/data.json" with { type: "json" };
-import { searchKeys } from './utils/helpers.js';
+import { createReport } from 'docx-templates';
+import { searchKeys, getJSONFile } from './utils/helpers.js';
 
 const dataDirectory = './data/';
-
-function getJSONFile(directory) {
-    const files = fs.readdirSync(directory).filter(file => file.endsWith('.json'));
-    return files.length > 0 ? files[0] : null;
-}
 
 const jsonFile = getJSONFile(dataDirectory);
 
@@ -25,6 +19,15 @@ const data = JSON.parse(rawData);
 const rapidos = searchKeys(data.envio, "rapido");
 data.rapidos = rapidos;
 
+/**
+ *
+ * Reads a DOCX template file, processes it using the provided data (json file), and saves the generated report
+ * in the "reports" directory with a timestamped filename.
+ *
+ * @async
+ * @function generateDocument
+ * @returns {Promise<void>} A promise that resolves when the document is successfully created.
+ */
 async function generateDocument() {
     const template = fs.readFileSync("templates/template.docx", null);
     const buffer = await createReport({

@@ -1,6 +1,6 @@
 {
     "nombre": "Juan Pérez",
-    "fecha": "NONE",
+    "fecha": "",
     "reporte": "Este es el informe del mes de febrero.",
     "precio": {
         "neto": "10",
