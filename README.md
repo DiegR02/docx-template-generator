@@ -1,88 +1,77 @@
-# 📄 DOCX Report Generator from JSON
+# docx-template-generator
 
-A Node.js script that generates DOCX reports based on a template and JSON data. It uses the `docx-templates` library to process the template and create a structured report in the `reports/` directory.
-
----
-
-## 🚀 Prerequisites
-
-Before running the script, ensure you have installed:
-
-- **Node.js** (version 14 or higher) → [Download here](https://nodejs.org/)
-- **npm** (Node.js package manager)
-
-To check if you have Node.js and npm installed, run the following commands in your terminal:
-
-```sh
-node -v  # Check Node.js version
-npm -v   # Check npm version
-```
+A reusable Node.js starter template for automating `.docx` document generation using the [`docx`](https://www.npmjs.com/package/docx) library. Built as a personal learning project and portfolio reference.
 
 ---
 
-## 📥 Installation
+## Features
 
-1. Clone this repository or download the files.
-2. Open a terminal in the project folder.
-3. Install the required dependencies by running:
+- Generates `.docx` files programmatically with Node.js
+- Clean, reusable template structure ready to extend
+- Minimal dependencies — easy to adapt to real-world automation tasks
 
-```sh
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Runtime | Node.js |
+| Document generation | [docx](https://www.npmjs.com/package/docx) |
+| Language | JavaScript |
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 16 or later
+- npm
+
+### Installation
+
+```bash
+git clone https://github.com/DiegR02/docx-template-generator.git
+cd docx-template-generator
 npm install
 ```
 
----
+### Usage
 
-## 🛠️ Usage
-
-1. Ensure that the `data/` folder contains a valid JSON or JS file with the necessary structure.
-2. The DOCX template should be located in the `templates/` folder with the name `template.docx`.
-3. Run the script using the following command:
-
-```sh
-node generateFromJS.js
-node generateFromJSON.js
+```bash
+node index.js
 ```
 
-If everything is set up correctly, a document will be generated in the `reports/` folder with a timestamped filename.
+> Review `index.js` (or the project entrypoint) to see how the template is structured and customise it for your own document automation needs.
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
-📂 docx-template-generatoor
-│── 📂 data                 # Folder containing the JSON and JS input file
-│── 📂 node-modules         # Folder containing the dependencies
-│── 📂 templates            # Folder containing the DOCX template
-│── 📂 utils                # Folder containing functions
-│── 📂 reports              # Folder where the generated reports are saved
-│── 📄 generateFromJS.js    # Script to generate from a JS files
-│── 📄 generateFromJSON.js  # Script to generate from a JSON file
-│── 📄 package.json         # Project configuration
-│── 📄 utils/helpers.js     # Helper functions
+docx-template-generator/
+├── index.js        # Main entrypoint — document generation logic
+├── package.json    # Project metadata and dependencies
+└── README.md       # Project documentation
 ```
 
----
-
-## 📝 Notes
-
-- If the `reports/` folder does not exist, the script will create it automatically.
-- If the JSON/JS file is missing in the `data/` folder, the script/s will not run.
-- The `{{ }}` syntax is used as a delimiter in the DOCX template for dynamic values.
+> Adjust the tree above to match the actual files in the repository.
 
 ---
 
-## 📌 Dependencies Used
+## Topics
 
-- `docx-templates`: For generating documents based on templates.
-- `fs` and `path`: Node.js modules for file and path handling.
-
----
-
-## 📜 License
-
-This project is under the MIT license. Feel free to use and modify it as needed.
+`document-automation` `docx` `generator` `javascript` `learning-project` `nodejs` `template`
 
 ---
 
-Enjoy generating automated reports! 🚀
+## Project Status
+
+This is a **learning and reference project**. It is not intended for production use but is designed to be a clean, reusable starting point for document automation work.
+
+---
+
+## License
+
+See [LICENSE](./LICENSE) for details.
