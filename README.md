@@ -1,88 +1,57 @@
-# 📄 DOCX Report Generator from JSON
+# docx-template-generator
 
-A Node.js script that generates DOCX reports based on a template and JSON data. It uses the `docx-templates` library to process the template and create a structured report in the `reports/` directory.
+A learning project that generates `.docx` documents from data supplied as either a JavaScript module or a JSON file, using the [`docx`](https://www.npmjs.com/package/docx) library on Node.js.
+
+> **Note:** This is personal practice work and is not intended for production use.
 
 ---
 
-## 🚀 Prerequisites
+## Project Structure
 
-Before running the script, ensure you have installed:
-
-- **Node.js** (version 14 or higher) → [Download here](https://nodejs.org/)
-- **npm** (Node.js package manager)
-
-To check if you have Node.js and npm installed, run the following commands in your terminal:
-
-```sh
-node -v  # Check Node.js version
-npm -v   # Check npm version
+```
+docx-template-generator/
+├── data/
+│   ├── data.js          # Data source (JavaScript module)
+│   └── data.json        # Data source (JSON file)
+├── templates/
+│   └── template.docx    # Base .docx template
+├── utils/
+│   └── helpers.js       # Shared helper functions
+├── generateFromJS.js    # Entry point — generates document from data.js
+├── generateFromJSON.js  # Entry point — generates document from data.json
+├── package.json
+└── LICENSE
 ```
 
 ---
 
-## 📥 Installation
+## Tech Stack
 
-1. Clone this repository or download the files.
-2. Open a terminal in the project folder.
-3. Install the required dependencies by running:
-
-```sh
-npm install
-```
+| Layer | Technology |
+|---|---|
+| Runtime | Node.js |
+| Document generation | docx |
+| Language | JavaScript |
 
 ---
 
-## 🛠️ Usage
+## Getting Started
 
-1. Ensure that the `data/` folder contains a valid JSON or JS file with the necessary structure.
-2. The DOCX template should be located in the `templates/` folder with the name `template.docx`.
-3. Run the script using the following command:
-
-```sh
-node generateFromJS.js
-node generateFromJSON.js
-```
-
-If everything is set up correctly, a document will be generated in the `reports/` folder with a timestamped filename.
+Review `package.json` for the exact dependency versions and any defined scripts before running the project.
 
 ---
 
-## 📂 Project Structure
+## Usage
 
-```
-📂 docx-template-generatoor
-│── 📂 data                 # Folder containing the JSON and JS input file
-│── 📂 node-modules         # Folder containing the dependencies
-│── 📂 templates            # Folder containing the DOCX template
-│── 📂 utils                # Folder containing functions
-│── 📂 reports              # Folder where the generated reports are saved
-│── 📄 generateFromJS.js    # Script to generate from a JS files
-│── 📄 generateFromJSON.js  # Script to generate from a JSON file
-│── 📄 package.json         # Project configuration
-│── 📄 utils/helpers.js     # Helper functions
-```
+Two entry points are provided depending on the preferred data source format:
+
+- `generateFromJS.js` — reads data from `data/data.js`
+- `generateFromJSON.js` — reads data from `data/data.json`
+
+Add concrete invocation examples here after validating the entry points locally.
 
 ---
 
-## 📝 Notes
+## License
 
-- If the `reports/` folder does not exist, the script will create it automatically.
-- If the JSON/JS file is missing in the `data/` folder, the script/s will not run.
-- The `{{ }}` syntax is used as a delimiter in the DOCX template for dynamic values.
-
----
-
-## 📌 Dependencies Used
-
-- `docx-templates`: For generating documents based on templates.
-- `fs` and `path`: Node.js modules for file and path handling.
-
----
-
-## 📜 License
-
-This project is under the MIT license. Feel free to use and modify it as needed.
-
----
-
-Enjoy generating automated reports! 🚀
+See [LICENSE](LICENSE).
