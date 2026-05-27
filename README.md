@@ -1,57 +1,84 @@
 # docx-template-generator
 
-A learning project that generates `.docx` documents from data supplied as either a JavaScript module or a JSON file, using the [`docx`](https://www.npmjs.com/package/docx) library on Node.js.
+## Overview
 
-> **Note:** This is personal practice work and is not intended for production use.
-
----
-
-## Project Structure
-
-```
-docx-template-generator/
-├── data/
-│   ├── data.js          # Data source (JavaScript module)
-│   └── data.json        # Data source (JSON file)
-├── templates/
-│   └── template.docx    # Base .docx template
-├── utils/
-│   └── helpers.js       # Shared helper functions
-├── generateFromJS.js    # Entry point — generates document from data.js
-├── generateFromJSON.js  # Entry point — generates document from data.json
-├── package.json
-└── LICENSE
-```
-
----
+This repository contains a JavaScript project prepared as part of a personal
+GitHub portfolio.
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Runtime | Node.js |
-| Document generation | docx |
-| Language | JavaScript |
+- Primary language: JavaScript
+- Frameworks and tools: docx, nodejs
+- Project type: document-automation, template
 
----
+## Repository Snapshot
 
-## Getting Started
+- Main language: JavaScript
+- Category: template
+- Priority: low
+- Days since update: 3
+- Has description: True
+- Has topics: True
+- Has README: True
+- Portfolio status: reusable
+- Quality signals: has-license
 
-Review `package.json` for the exact dependency versions and any defined scripts before running the project.
+## Suggested Topics
 
----
+- document-automation
+- docx
+- generator
+- javascript
+- learning-project
+- nodejs
+- template
+
+## Project Structure
+
+Observed repository paths:
+
+- .gitignore
+- LICENSE
+- README.md
+- data
+- data/data.js
+- data/data.json
+- generateFromJS.js
+- generateFromJSON.js
+- package-lock.json
+- package.json
+- templates
+- templates/template.docx
+- utils
+- utils/helpers.js
+
+## Installation
+
+- Review the repository source files to confirm setup requirements.
+- Add exact commands after human validation.
 
 ## Usage
 
-Two entry points are provided depending on the preferred data source format:
+- Add usage examples after validating the project entrypoint.
 
-- `generateFromJS.js` — reads data from `data/data.js`
-- `generateFromJSON.js` — reads data from `data/data.json`
+## Project Status
 
-Add concrete invocation examples here after validating the entry points locally.
+- Category: template
+- Priority: low
 
----
+## Repository Maintenance
 
-## License
+This repository has been reviewed for naming, metadata and documentation
+consistency.
 
-See [LICENSE](LICENSE).
+## Suggested Actions
+
+- None
+
+## Review Notes
+
+It looks like a reusable template or starter.
+
+- Stack: docx, nodejs
+- Project type: document-automation, template
+- Position as learning or practice work, not production software.
